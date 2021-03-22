@@ -1,0 +1,32 @@
+@media only screen and (max-width: 480px){
+.custom-menu-left{
+		display: block;
+		z-index: 2;
+		margin-top:0;
+		width: 480px;
+	}
+	.custom-menu-left ul{
+		margin-left: 20px; 
+		width: 115%;
+		max-width: 640px;
+
+	}
+	.custom-menu-left ul li{
+		width: 100%;
+		margin-left: -12%;
+
+	}
+	.close-menu-left{
+		display: none;
+	}
+	.butclose{
+		display: none;
+	}
+	.top-menu-choise{
+		margin-top: 13%;
+		margin-left: -39%;
+	}
+	.carousel{
+		display: none;
+	}
+}
