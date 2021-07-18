@@ -16,7 +16,7 @@ $('#notdost').click(function() {
  
 });
 var dt = new Date();
-if ($('#notfar').prop("checked") && dt.getHours()>=22 && dt.getHours()<=10) {
+if ($('#notfar').prop("checked") && (dt.getHours()>=22 || dt.getHours()<=10)) {
     $('.nonefar').fadeIn(300);
 } else {
     $('.nonefar').fadeOut(300);
@@ -28,7 +28,7 @@ if ($('#notfar').prop("checked") && dt.getHours()>=22 && dt.getHours()<=10) {
     } else {
       $('.ontime').fadeOut(300);
     }
-    if ($('#notfar').prop("checked") && dt.getHours()>=22 && dt.getHours()<=10) {
+    if ($('#notfar').prop("checked") && (dt.getHours()>=22 || dt.getHours()<=10)) {
         $('.nonefar').fadeIn(300);
     } else {
         $('.nonefar').fadeOut(300);
