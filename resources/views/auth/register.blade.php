@@ -47,7 +47,15 @@
                                
                             </div>
                         </div>
+                        <div class="form-group row">
+                            <label for="bday" class="col-md-4 col-form-label text-md-right">{{ __('Дата рождения') }}</label>
 
+                            <div class="col-md-6">
+                                <input id="bday" type="date" class="form-control" name="bday" required >
+
+
+                            </div>
+                        </div>
                         <div class="form-group row">
                             <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Пароль') }}</label>
 

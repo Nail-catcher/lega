@@ -1,16 +1,26 @@
 $('#dost').click(function() {
  $('#notdost').css('color', '#FFFAFA');
  $('#dost').css('color', '#ED2828');
+    $('#notdost').css('text-decoration', 'none');
+ $('#dost').css('text-decoration', 'underline');
  $('.adresstable').css('display', 'block');
  $("#shipping").val(0);
 });
 $('#notdost').click(function() {
  $('#notdost').css('color', '#ED2828');
  $('#dost').css('color', '#FFFAFA');
+    $('#notdost').css('text-decoration', 'underline');
+    $('#dost').css('text-decoration', 'none');
  $('.adresstable').css('display', 'none');
  $("#shipping").val(1);
  
 });
+var dt = new Date();
+if ($('#notfar').prop("checked") && dt.getHours()>=22 && dt.getHours()<=10) {
+    $('.nonefar').fadeIn(300);
+} else {
+    $('.nonefar').fadeOut(300);
+}
   $(".radiotime").change(function() {
 
     if ($('#far').prop("checked")) {
@@ -18,7 +28,11 @@ $('#notdost').click(function() {
     } else {
       $('.ontime').fadeOut(300);
     }
-
+    if ($('#notfar').prop("checked") && dt.getHours()>=22 && dt.getHours()<=10) {
+        $('.nonefar').fadeIn(300);
+    } else {
+        $('.nonefar').fadeOut(300);
+    }
   });
   $(".radiomoney").change(function() {
 
@@ -276,6 +290,6 @@ for (let key of blackcase.keys()) {
 
 
 
-//pizza construct
+
 
 

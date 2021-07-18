@@ -49,7 +49,30 @@
 
 		<div class="card-prod">
 		<img src="{{asset('storage/catalog/eat/source/'.$eat->image)}}">
-		<div class="tittle_eat">{{$eat->title}}</div>
+		<div class="tittle_eat">{{$eat->title}}
+
+        </div>
+			{{--@if($category->slug=='pizza' )--}}
+				{{--<div>--}}
+
+					{{--<input type="radio" name="{{$eat->id}}" id="{{$eat->title}}" value="0" checked>--}}
+					{{--<label for="{{$eat->title}}" style="color:white">20 см</label>--}}
+
+					{{--<input type="radio" name="{{$eat->id}}" id="{{$eat->title}}" value="1" >--}}
+					{{--<label for="{{$eat->title}}"  style="color:white">30 см</label>--}}
+
+						{{--</div>--}}
+			{{--<script>--}}
+				{{--$('#{{$eat->title}}').click(function(){--}}
+				{{--var value = $('#{{$eat->title}}:checked').val();--}}
+				{{--var plus = document.getElementById('plus');--}}
+				{{--var minus = document.getElementById('minus');--}}
+					{{--minus.dataset.mod = value;--}}
+					{{--plus.dataset.mod = value;--}}
+
+				{{--});--}}
+				{{--</script>--}}
+			{{--@endif--}}
 		<div class="path_eat">
 			@foreach ($eat->path_eats as $path_eat) 
                 {{ $path_eat->title }},
@@ -58,10 +81,10 @@
 		<div class="cost-howmany">
 		<div class="cost">{{ $eat->cost }} Р</div>
 		<div class="weight">{{ $eat->weight }} Гр</div>
-		<div class="howmany"><i class="far fa-minus-square" data-id="{{$eat->id}}" data-name="{{$eat->title}}" data-cost="{{$eat->cost}}" id="minus"></i><p id="{{$eat->id}}">0</p>
+		<div class="howmany"><i class="far fa-minus-square" data-id="{{$eat->id}}" data-name="{{$eat->title}}" data-cost="{{$eat->cost}}"  data-mod="0" id="minus"></i><p id="{{$eat->id}}">0</p>
 			
 
-		<i class="far fa-plus-square" data-id="{{$eat->id}}" data-name="{{$eat->title}}" data-cost="{{$eat->cost}}" id="plus"></i></div>
+		<i class="far fa-plus-square" data-id="{{$eat->id}}" data-name="{{$eat->title}}" data-cost="{{$eat->cost}}"  data-mod="0" id="plus"></i></div>
 		<!-- <form action="{{ route('basket.add', ['id' => $eat->id]) }}"
           method="post" class="form-inline">
         @csrf
@@ -99,6 +122,9 @@ $('.huilter').click(function() {
 		});      
  });
 
-
 </script>
+
+<style>
+
+</style>
 @endsection

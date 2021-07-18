@@ -16,8 +16,9 @@
 			<label>Телефон</label><br>
 			<input type="phone" name="phone" value="{{Auth::user()->phone}}"><br>
 			<label>Е-mail</label><br>
-			<input type="text" name="e-mail" value="{{Auth::user()->email}}"><br>
-			<h2>У вас {{Auth::user()->points_pay}} баллов</h2>	
+			<input type="text" name="e-mail" value="{{Auth::user()->email}}"><br><br>
+		<h3>Дата рождения: {{date('j. m. Y', strtotime(Auth::user()->bday))}} <br>в этот день вы получите скидку 30%!</h3><br>
+		<h2>У вас {{Auth::user()->points_pay}} баллов</h2>
 	</div>		
 	<div class="adress">
 		<h2>Адрес</h2>

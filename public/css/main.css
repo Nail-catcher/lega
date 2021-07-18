@@ -571,6 +571,10 @@ margin-top: -10px;
 	margin-right: 8%;
 	font-size: 17pt;
 }
+#dost{
+	text-decoration: underline;
+
+}
 .sort{
 		display: none;
 	}

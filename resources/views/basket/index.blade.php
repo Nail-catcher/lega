@@ -96,6 +96,11 @@
                 <th id="visiblevalue">{{ number_format($basketCost, 0,'','') }} P</th>
             </tr>
         </table>
+
+        <div id="freedosttext" >
+            <p style="color: red">Бесплатная доставка начинается с <i id ="cost">500</i> рублей</p>
+
+        </div>
     </div>
         <div class="adress order">
         <div class="choiseoffer"><a href="#" id="dost" style="color:#ED2828">Доставка</a><a href="#" id="notdost">Самовывоз</a></div>
@@ -110,13 +115,38 @@
             <tr ><td colspan="4"><label>Имя*</label><br>
             <input type="text" name="name" value="{{Auth::user()->name}}" style="width: 600px;" required></td></tr>
             <tr ><td colspan="2"><label>Телефон*</label><br>
-            <input type="phone" name="phone" style="width: 290px;" value="{{Auth::user()->phone}}" required></td>
+            <input type="phone" name="phone" style="width: 300px;" value="{{Auth::user()->phone}}" required></td>
              <td  colspan="2"><label>Е-mail</label><br>
-            <input type="text" name="e-mail" value="{{Auth::user()->email}}" style="width: 290px;"></td></tr>
+            <input type="text" name="e-mail" value="{{Auth::user()->email}}" style="width: 300px;"></td></tr>
             </table>
             <table class="adresstable" style="color:white; ">
-            <tr ><td colspan="4"><label>Улица*</label><br>
-            <input type="text" name="street" style="width: 600px;" value="{{Auth::user()->street}}" required><td></tr>
+            <tr><td colspan="2">
+                    <label>Район*</label><br>
+                    <select name="freedost" id="freedost" style="width: 300px;">
+                        <option value="0"> </option>
+                        <option value="600">Заозёрный</option>
+                        <option value="700">Рябково</option>
+
+                            <option value="600">Энергетики</option>
+
+                                <option value="700">Вороновка</option>
+
+                                    <option value="600">Восточный</option>
+
+                                        <option value="500">Центральный</option>
+
+                                            <option value="600">Западный</option>
+
+                                                <option value="600">Северный</option>
+
+                                                    <option value="700">Малое Чаусово
+                        </option>
+                    </select>
+                    <options>
+
+                    </options></td>
+                <td colspan="2"><label>Улица*</label><br>
+            <input type="text" name="street" style="width: 300px;" value="{{Auth::user()->street}}" required></td></tr>
              <tr >
             <td colspan="1"><label>Дом*</label><br>
             <input type="text" name="homes" style="width: 121px;" value="{{Auth::user()->home}}" required></td>
@@ -141,6 +171,14 @@
             <input type="number" name="minutes" step="15" max="45" min="0" style="width: 121px;"></td></div>
             
              <tr >
+            </table>
+            <table class="nonefar" style="color:red;display: none; ">
+                <div class="nonefar" style="display: none;">
+                    <td colspan="6"><label>Ресторан уже не работает (часы приема заказов: 10.00-22.00), приходите завтра</label><br>
+
+                    </div>
+
+                <tr >
             </table>
             <table class="buttons" style="color:white;">
                 <tr ><td colspan="4"><label>Комментарий</label><br>
@@ -189,5 +227,23 @@ $("#points_pay").bind("change paste keyup", function() {
     });
 });
         points_pay
+
+if (500>={{$basketCost}}){
+    $('#freedosttext').css('display', 'block');
+
+} else {
+    $('#freedosttext').css('display', 'none');
+}
+
+$('#freedost').on('change',function(){
+    $('#cost').html($("#freedost option:selected").val());
+    if($("#freedost option:selected").val()>={{$basketCost}}){
+        $('#freedosttext').css('display', 'block');
+
+    } else {
+        $('#freedosttext').css('display', 'none');
+    }
+});
+        console.log( {{$basketCost}});
     </script>
 @endsection
