@@ -194,7 +194,7 @@
             </p></div></td>
              <td colspan="2"><p><input name="choise1" type="checkbox" required>С условиями доставки согласен*</p></td></tr>
              <tr >
-            <td colspan="2"><p><input class="radiomoney" name="money" type="radio" value="equaring">Банковской картой на сайте</p></td>
+            {{--<td colspan="2"><p><input class="radiomoney" name="money" type="radio" value="equaring">Банковской картой на сайте</p></td>--}}
             <td colspan="2"><p><input name="choise1" type="checkbox" required>Я согласен с условиями <br>использования персональных данных*</p></td></tr>
             <tr >
             <td colspan="2"><p><input class="radiomoney" name="money" type="radio" value="card" checked="checked">Банковской картой при получении</p></td>
