@@ -124,22 +124,28 @@
                     <label>Район*</label><br>
                     <select name="freedost" id="freedost" style="width: 300px;">
                         <option value="0"> </option>
-                        <option value="600">Заозёрный</option>
+                        <option value="700">Заозёрный</option>
                         <option value="700">Рябково</option>
 
-                            <option value="600">Энергетики</option>
+                            <option value="700">Энергетики</option>
 
-                                <option value="700">Вороновка</option>
-
-                                    <option value="600">Восточный</option>
+                                <option value="1200">Вороновка</option>
+                                    <option value="700">Бульвар Солнечный</option>
+                                    <option value="700">Восточный</option>
 
                                         <option value="500">Центральный</option>
 
-                                            <option value="600">Западный</option>
+                                            <option value="500">Западный</option>
 
-                                                <option value="600">Северный</option>
+                                                <option value="700">Северный</option>
 
-                                                    <option value="700">Малое Чаусово
+                                                    <option value="1200">Малое Чаусово
+                        </option>
+                        <option value="1200">Кетово
+                        </option>
+                        <option value="1200">Увал
+                        </option>
+                        <option value="1200">Сиреневый
                         </option>
                     </select>
                     <options>
